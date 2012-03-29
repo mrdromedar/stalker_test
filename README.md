@@ -5,7 +5,7 @@ To use it with rails, add an initializer to load stalker test when we are in tes
 config/initializers/load_stalker_test.rb:
 <pre>
 if RAILS_ENV=="test" 
-  require "stalker_test/stalker_test"
+  require "stalker_test"
 end
 </pre>
 
