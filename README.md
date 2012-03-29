@@ -9,6 +9,11 @@ if RAILS_ENV=="test"
 end
 </pre>
 
+Gemfile:
+<pre>
+gem "stalker_test", :require => false, :git => git://github.com/mrdromedar/stalker_test.git
+</pre>
+
 To use it in your tests:
 <pre>
 def test_stalker
