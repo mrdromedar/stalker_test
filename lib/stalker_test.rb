@@ -7,9 +7,6 @@ module Stalker
   end
 
   def self.queue
-    res = @queue
-    @queue = []
-
-    res
+    @queue
   end
 end
