@@ -1,3 +1,4 @@
+
 require "stalker_test/version"
 
 module Stalker
@@ -7,6 +8,6 @@ module Stalker
   end
 
   def self.queue
-    @queue
+    @queue || []
   end
 end
