@@ -7,17 +7,13 @@ Gem::Specification.new do |s|
   s.version     = StalkerTest::VERSION
   s.authors     = ["Markus Jansen"]
   s.email       = ["markus.jansen@plainpicture.de"]
-  s.homepage    = ""
-  s.summary     = %q{Enables to test stalker queue content.}
-  s.description = %q{Enables to test stalker queue content.}
-
-  s.rubyforge_project = "stalker_test"
+  s.summary     = %q{Easily test the stalker jobs you enqueue.}
+  s.description = %q{Easily test the stalker jobs you enqueue.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
   s.add_development_dependency "rake"
 end
