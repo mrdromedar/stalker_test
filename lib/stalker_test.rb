@@ -3,7 +3,8 @@ require "stalker_test/version"
 
 module Stalker
   def self.enqueue(*args)
-    @queue ||=[]
+    @queue ||= []
+
     @queue.push args
   end
 

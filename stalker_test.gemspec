@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["markus.jansen@plainpicture.de"]
   s.summary     = %q{Easily test the stalker jobs you enqueue.}
   s.description = %q{Easily test the stalker jobs you enqueue.}
+  s.homepage    = "https://github.com/mrdromedar/stalker_test"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

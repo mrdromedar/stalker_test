@@ -1,4 +1,5 @@
-# Stalker test
+
+# StalkerTest
 
 Easily test the stalker jobs you enqueue.
 
@@ -6,30 +7,31 @@ Easily test the stalker jobs you enqueue.
 
 Add this line to your application's Gemfile:
 
-    gem "stalker_test", :git => "git://github.com/mrdromedar/stalker_test.git", :require => false
+<pre>
+  group :test do
+    gem "stalker_test"
+  end
+</pre>
 
 And then execute:
 
-    $ bundle
+<pre>
+  $ bundle
+</pre>
 
 ## Usage
 
-To use it with rails, add an initializer to load stalker test when you are in testing mode:
-
-config/initializers/load_stalker_test.rb:
-
-<pre>
-require "stalker_test" if Rails.env == "test"
-</pre>
+When stalker_test is loaded, your jobs will no longer be enqueued in beanstalk.
+Instead, they are simply added to an in-memory queue, which can be accessed.
 
 To use it in your tests:
 
 <pre>
-def test_stalker
-  Stalker.enqueue "test.job", "id" => 1
+  def test_stalker
+    Stalker.enqueue "test.job", "id" => 1
 
-  assert_equal [["test.job", { "id" => 1 }]], Stalker.queue
-end
+    assert_equal ["test.job", { "id" => 1 }], Stalker.queue.last
+  end
 </pre>
 
 ## Contributing
