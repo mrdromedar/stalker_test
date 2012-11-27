@@ -24,6 +24,9 @@ And then execute:
 When stalker_test is loaded, your jobs will no longer be enqueued in beanstalk.
 Instead, they are simply added to an in-memory queue, which can be accessed.
 
+However, please always check that you don't load this gem in your production
+environment, because otherwise your jobs won't be enqueued anymore.
+
 To use it in your tests:
 
 <pre>
