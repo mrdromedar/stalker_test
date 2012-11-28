@@ -7,35 +7,41 @@ Easily test the stalker jobs you enqueue.
 
 Add this line to your application's Gemfile:
 
-<pre>
-  group :test do
-    gem "stalker_test"
-  end
-</pre>
+```ruby
+group :test do
+  gem "stalker_test"
+end
+```
 
 And then execute:
 
-<pre>
-  $ bundle
-</pre>
+```
+$ bundle
+```
+
+Alternatively, you can of course install it without bundler via:
+
+```
+$ gem install stalker_test
+```
 
 ## Usage
 
 When stalker_test is loaded, your jobs will no longer be enqueued in beanstalk.
 Instead, they are simply added to an in-memory queue, which can be accessed.
 
-However, please always check that you don't load this gem in your production
-environment, because otherwise your jobs won't be enqueued anymore.
+Thus, please always check that you don't load this gem into your production
+environment! Otherwise your jobs won't be enqueued anymore.
 
 To use it in your tests:
 
-<pre>
-  def test_stalker
-    Stalker.enqueue "test.job", "id" => 1
+```ruby
+def test_stalker
+  Stalker.enqueue "test.job", "id" => 1
 
-    assert_equal ["test.job", { "id" => 1 }], Stalker.queue.last
-  end
-</pre>
+  assert_equal ["test.job", { "id" => 1 }], Stalker.queue.last
+end
+```
 
 ## Contributing
 
